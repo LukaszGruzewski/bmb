@@ -33,3 +33,85 @@
     line-height: 1.4;
     margin-right: 80px;
 }
+
+
+.section_photos {
+    display: flex;
+
+    .half {
+        width: 50%;
+        height: 860px;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+
+        .small {
+            display: flex;
+            width: 50%;
+            height: 430px;
+            overflow: hidden;
+        }
+    }
+
+    .img1 {
+        background: url('../images/photo1.png') no-repeat center;
+    }
+
+    .img2 {
+        background: url('../images/photo2.png') no-repeat center;
+    }
+
+    .img3 {
+        background: url('../images/photo3.png') no-repeat center;
+    }
+
+    .img4 {
+        background: url('../images/photo4.png') no-repeat center;
+    }
+
+    .img5 {
+        background: url('../images/photo5.png') no-repeat center;
+    }
+}
+
+.effect {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: all 1.5s;
+}
+
+.effect:hover {
+    background-color: rgba(97, 255, 132, 0.5);
+    transform: scale(1.2);
+}
+
+.effect:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: inherit;
+    content: ' ';
+}
+
+.photos_text {
+    position: absolute;
+    bottom: 45px;
+    left: 55px;
+    color: $color-font-primary;
+    text-transform: uppercase;
+    line-height: 1.2;
+
+    :first-child {
+        font-family: 'maison_bold';
+        font-size: 24px;
+    }
+
+    :last-child {
+        font-family: 'maison_italic';
+        font-size: 18px;
+        padding-top: 10px;
+    }
+}
