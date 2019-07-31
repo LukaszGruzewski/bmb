@@ -1,172 +1,137 @@
 .people {
-    min-height: 800px;
+  min-height: 800px;
 }
 
 .people_title {
-    font-family: 'maison_bold';
-    font-size: 18px;
-    color: $color-font-secondary;
-    text-transform: uppercase;
-    position: relative;
-    margin-left: 30px;
-    top: 140px;
+  font-family: 'maison_bold';
+  font-size: 18px;
+  color: $color-font-secondary;
+  text-transform: uppercase;
+  position: relative;
+  padding-left: 60px;
+  //   top: 140px;
 
-    &:before {
-        content: "";
-        width: 27px;
-        border-top: 2px solid $color-font-secondary;
-        position: absolute;
-        top: calc(50% - 2px);
-        left: -60px;
-    }
+  &:before {
+    content: '';
+    width: 27px;
+    border-top: 2px solid $color-font-secondary;
+    position: absolute;
+    top: calc(50% - 2px);
+    left: 0;
+  }
 }
 
-
 .people_carousel {
-    max-width: 970px;
-    margin: 0 auto;
-    padding: 350px 0 150px 0;
+  max-width: 970px;
+  margin: 0 auto;
+  padding: 350px 0 150px 0;
 }
 
 .slide {
-    display: none;
+  display: none;
 }
 
 .visible {
-    display: block;
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
+  display: block;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .fade {
-    animation-name: fade;
-    animation-duration: 2s;
+  animation-name: fade;
+  animation-duration: 2s;
 }
 
 @keyframes fade {
-    from {
-        opacity: .3
-    }
+  from {
+    opacity: 0.3;
+  }
 
-    to {
-        opacity: 1
-    }
+  to {
+    opacity: 1;
+  }
 }
 
 .people_img {
-    height: 205px;
-    width: 205px;
-    background: url('../images/people1.png') no-repeat center;
-    background-size: cover;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-top: 90px;
-    margin-left: 150px;
+  height: 205px;
+  width: 205px;
+  background: url('../images/people1.png') no-repeat center;
+  background-size: cover;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: 90px;
+  margin-left: 150px;
 }
 
 .people_text {
-    max-width: 500px;
+  max-width: 500px;
+  min-height: 100px;
 
-    h2 {
-        font-family: 'maison_bold';
-        font-size: 28px;
-        margin-left: -5px;
-        padding-bottom: 20px;
-    }
+  h2 {
+    font-family: 'maison_bold';
+    font-size: 28px;
+    margin-left: -5px;
+    padding-bottom: 20px;
+  }
 
-    span {
-        font-size: 16px;
-        font-family: 'maison_book';
-        color: $color-font-secondary;
-        text-transform: uppercase;
-    }
+  span {
+    font-size: 16px;
+    font-family: 'maison_book';
+    color: $color-font-secondary;
+    text-transform: uppercase;
+  }
 
-    p {
-        font-family: 'maison_book';
-        font-size: 18px;
-        line-height: 2;
-        padding-top: 70px;
-        margin-right: 30px;
-    }
+  p {
+    font-family: 'maison_book';
+    font-size: 18px;
+    line-height: 2;
+    padding-top: 70px;
+    margin-right: 30px;
+  }
 }
 
 .quot {
-    display: flex;
-    position: absolute;
-    z-index: -1;
-    margin-left: -190px;
-    margin-top: -145px;
+  display: flex;
+  position: absolute;
+  z-index: -1;
+  margin-left: -190px;
+  margin-top: -145px;
 
-    div {
-        width: 102px;
-        height: 189px;
-        background: url('../images/quot.png') no-repeat center;
-        margin-right: 40px;
-    }
+  div {
+    width: 102px;
+    height: 189px;
+    background: url('../images/quot.png') no-repeat center;
+    margin-right: 40px;
+  }
 }
 
 .slider_navigation {
-    display: flex;
-    justify-content: space-between;
-    margin-top: -280px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: -280px;
 }
 
 .prev_btn,
 .next_btn {
-    outline: none;
-    display: block;
-    background: none;
-    border: none;
-    cursor: pointer;
+  outline: none;
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-
-.logos {
-    background: #000;
+.swiper-pagination-bullet-active {
+  background: yellow;
 }
 
-.logo_carousel {
-    margin-top: 160px;
+.section-logos {
+  background: #000;
+  padding: 140px 0;
+
+  .swiper-slide {
+    height: 200px;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    div {
-        width: 25%;
-        height: 100px;
-        padding: 100px 0;
-    }
-}
-
-.samsung {
-    background: url('../images/samsung.png') no-repeat center;
-}
-
-.clientearth {
-    background: url('../images/clientearth.png') no-repeat center;
-}
-
-.hilton {
-    background: url('../images/hilton.png') no-repeat center;
-}
-
-.mondelez {
-    background: url('../images/mondelez.png') no-repeat center;
-}
-
-.dugout {
-    background: url('../images/dugout.png') no-repeat center;
-}
-
-.newbalance {
-    background: url('../images/newbalance.png') no-repeat center;
-}
-
-.batiste {
-    background: url('../images/batiste.png') no-repeat center;
-}
-
-.linkedin {
-    background: url('../images/linkedin.png') no-repeat center;
+    align-items: center;
+  }
 }
