@@ -1,32 +1,31 @@
-.people {}
+.people {
+    min-height: 800px;
+}
 
-.people_container {
-    max-width: 1430px;
-    margin: 0 auto;
+.people_title {
+    font-family: 'maison_bold';
+    font-size: 18px;
+    color: $color-font-secondary;
+    text-transform: uppercase;
+    position: relative;
+    margin-left: 30px;
+    top: 140px;
 
-    .people_title {
-        font-family: 'maison_book';
-        font-size: 18px;
-        color: $color-font-secondary;
-        text-transform: uppercase;
-        position: relative;
-        left: 130px;
-
-        &:before {
-            content: "";
-            width: 27px;
-            border-top: 2px solid $color-font-secondary;
-            position: absolute;
-            top: calc(50% - 2px);
-            left: -60px;
-        }
+    &:before {
+        content: "";
+        width: 27px;
+        border-top: 2px solid $color-font-secondary;
+        position: absolute;
+        top: calc(50% - 2px);
+        left: -60px;
     }
 }
+
 
 .people_carousel {
     max-width: 970px;
     margin: 0 auto;
-    padding: 250px 0 150px 0;
+    padding: 350px 0 150px 0;
 }
 
 .slide {
@@ -115,10 +114,59 @@
 
 .prev_btn,
 .next_btn {
-    padding: 0 10px;
     outline: none;
     display: block;
     background: none;
     border: none;
     cursor: pointer;
+}
+
+
+.logos {
+    background: #000;
+}
+
+.logo_carousel {
+    margin-top: 160px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    div {
+        width: 25%;
+        height: 100px;
+        padding: 100px 0;
+    }
+}
+
+.samsung {
+    background: url('../images/samsung.png') no-repeat center;
+}
+
+.clientearth {
+    background: url('../images/clientearth.png') no-repeat center;
+}
+
+.hilton {
+    background: url('../images/hilton.png') no-repeat center;
+}
+
+.mondelez {
+    background: url('../images/mondelez.png') no-repeat center;
+}
+
+.dugout {
+    background: url('../images/dugout.png') no-repeat center;
+}
+
+.newbalance {
+    background: url('../images/newbalance.png') no-repeat center;
+}
+
+.batiste {
+    background: url('../images/batiste.png') no-repeat center;
+}
+
+.linkedin {
+    background: url('../images/linkedin.png') no-repeat center;
 }
