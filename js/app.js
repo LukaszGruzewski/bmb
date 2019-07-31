@@ -26,9 +26,20 @@ $(function() {
   });
 });
 
-var swiper = new Swiper('.swiper-container', {
+var swiper = new Swiper('#swiper-logos', {
   slidesPerView: 4,
   slidesPerColumn: 2,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
+  }
+});
+
+var swiper = new Swiper('#swiper-people', {
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  },
   pagination: {
     el: '.swiper-pagination',
     clickable: true

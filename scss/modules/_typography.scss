@@ -1,0 +1,17 @@
+.section-title {
+  font-family: 'maison_bold';
+  font-size: 18px;
+  color: $color-font-secondary;
+  text-transform: uppercase;
+  position: relative;
+  padding-left: 60px;
+
+  &:before {
+    content: '';
+    width: 27px;
+    border-top: 2px solid $color-font-secondary;
+    position: absolute;
+    top: calc(50% - 2px);
+    left: 0;
+  }
+}
