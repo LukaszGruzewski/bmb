@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   var swiper = new Swiper('#swiper-people', {
     loop: true,
     navigation: {
@@ -19,4 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
       clickable: true
     }
   });
+
+  // var swiper = new Swiper('#swiper-poster', {
+
+  // });
 });

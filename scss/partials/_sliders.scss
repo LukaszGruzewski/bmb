@@ -23,6 +23,7 @@
           top: -35px;
           left: 0;
           transform: translateY(-100%);
+
           h2 {
             font-family: 'maison_bold';
             font-size: 28px;
@@ -120,6 +121,38 @@
 }
 
 .section-posters {
-  height: 100px;
-  background: grey;
+
+  background: #000;
+  padding: 30px 0;
+  overflow: hidden;
+
+  .swiper-container {
+    margin: 0 -7px;
+
+    .swiper-slide {
+      display: flex;
+      flex: 1;
+      height: 480px;
+      padding: 0 7px;
+
+      div {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.poster1 {
+  background: url('../images/bottom-carousel-1.png') no-repeat center;
+  background-size: cover;
+}
+
+.poster2 {
+  background: url('../images/bottom-carousel-2.png') no-repeat center;
+  background-size: cover;
+}
+
+.poster3 {
+  background: url('../images/bottom-carousel-3.png') no-repeat center;
+  background-size: cover;
 }
