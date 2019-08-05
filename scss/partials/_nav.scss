@@ -30,6 +30,7 @@
 }
 
 .main_nav {
+
   @include breakpoint(mobileonly) {
     .nav_logo {
     float: left;
