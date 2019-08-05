@@ -23,7 +23,6 @@ header {
 }
 }
 
-
 .header_content {
   @include breakpoint(mobileonly) {
       padding: 160px 10px 100px 10px;
