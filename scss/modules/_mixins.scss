@@ -8,7 +8,7 @@ BREAKPOINTS
       @content;
     }
   } @else if $point == tablet {
-    @media (min-width: 769px) {
+    @media (min-width: 769px)  {
       @content;
     }
   } @else if $point == mobileonly {
