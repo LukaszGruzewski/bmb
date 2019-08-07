@@ -1,267 +1,267 @@
 .section1 {
-    width: 100%;
-    background: $color-background-primary;
+  width: 100%;
+  background: $color-background-primary;
+
+  .section1_title {
+    font-family: 'maison_bold';
+  }
+
+  .section1_text {
+    font-family: 'maison_italic';
+    color: $color-font-secondary;
+  }
+
+  @include breakpoint(mobileonly) {
+    padding: 110px 10px;
+
+    .wrapper {
+      display: flex;
+      align-items: center;
+    }
 
     .section1_title {
-        font-family: 'maison_bold';
+      font-size: 56px;
+      line-height: 1;
+      padding-bottom: 50px;
     }
 
     .section1_text {
-        font-family: 'maison_italic';
-        color: $color-font-secondary;
+      font-size: 20px;
+      line-height: 1.7;
+    }
+  }
 
+  @include breakpoint(tabletonly) {
+    padding: 200px 40px;
+
+    .wrapper {
+      display: flex;
+      align-items: center;
     }
 
-    @include breakpoint(mobileonly) {
-        padding: 110px 10px;
+    .center {
+      .section1_title {
+        font-size: 72px;
+        line-height: 1.2;
+        padding-bottom: 50px;
+      }
 
-        .wrapper {
-            display: flex;
-            align-items: center;
+      .section1_text {
+        font-size: 33px;
+        line-height: 1.4;
+      }
+    }
+  }
 
-        }
+  @include breakpoint(desktop) {
+    height: 100vh;
 
-        .section1_title {
-            font-size: 56px;
-            line-height: 1;
-            padding-bottom: 50px;
-        }
-
-        .section1_text {
-            font-size: 20px;
-            line-height: 1.7;
-        }
+    .wrapper {
+      height: 100vh;
+      display: flex;
+      align-items: center;
     }
 
-    @include breakpoint(tablet) {
-        padding: 200px 40px;
+    .center {
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 30px;
 
-        .wrapper {
-            display: flex;
-            align-items: center;
-        }
+      .section1_title {
+        font-size: 72px;
+        line-height: 1.2;
+        padding-right: 20px;
+        max-width: 425px;
+      }
 
-        .center {
-
-            .section1_title {
-                font-size: 72px;
-                line-height: 1.2;
-                padding-bottom: 50px;
-            }
-
-            .section1_text {
-                font-size: 33px;
-                line-height: 1.4;
-            }
-        }
+      .section1_text {
+        font-size: 33px;
+        line-height: 1.4;
+        max-width: 566px;
+      }
     }
-
-    @include breakpoint(desktop) {
-        padding: 0;
-        height: 100vh;
-
-
-        .wrapper {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-
-        .center {
-            flex: 1;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 30px;
-
-            .section1_title {
-                font-size: 72px;
-                line-height: 1.2;
-                padding-right: 20px;
-                max-width: 425px;
-            }
-
-            .section1_text {
-                font-size: 33px;
-                line-height: 1.4;
-                max-width: 566px;
-            }
-        }
-    }
+  }
 }
 
 ///////////////////////////////////
 
 .section_photos {
+  .effect {
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    .photos_text {
+      position: absolute;
+      color: $color-font-primary;
+      text-transform: uppercase;
+      line-height: 1.2;
+
+      :first-child {
+        font-family: 'maison_bold';
+      }
+
+      :last-child {
+        font-family: 'maison_italic';
+        padding-top: 10px;
+      }
+    }
+  }
+
+  .img1 {
+    background: url('../images/photo1.png') no-repeat center;
+    background-size: cover;
+  }
+
+  .img2 {
+    background: url('../images/photo2.png') no-repeat center;
+    background-size: cover;
+  }
+
+  .img3 {
+    background: url('../images/photo3.png') no-repeat center;
+    background-size: cover;
+  }
+
+  .img4 {
+    background: url('../images/photo4.png') no-repeat center;
+    background-size: cover;
+  }
+
+  .img5 {
+    background: url('../images/photo5.png') no-repeat center;
+    background-size: cover;
+  }
+}
+
+.section_photos {
+  @include breakpoint(mobileonly) {
+    .img1,
+    .img2,
+    .img4 {
+      width: 100%;
+      height: 320px;
+      overflow: hidden;
+    }
+
+    .img3,
+    .img5 {
+      display: none;
+    }
+
+    .photos_text {
+      bottom: 30px;
+      left: 30px;
+
+      :first-child {
+        font-size: 16px;
+      }
+
+      :last-child {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.section_photos {
+  @include breakpoint(tablet) {
+    .half {
+      width: 100%;
+      height: 860px;
+      display: flex;
+      flex-wrap: wrap;
+
+      .small {
+        width: 50%;
+        height: 430px;
+      }
+    }
+
+    .photos_text {
+      bottom: 30px;
+      left: 30px;
+
+      :first-child {
+        font-size: 20px;
+      }
+
+      :last-child {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.section_photos {
+  @include breakpoint(desktop) {
+    display: flex;
+
+    .half {
+      width: 50%;
+      height: 860px;
+      display: flex;
+      flex-wrap: wrap;
+      overflow: hidden;
+
+      .small {
+        display: flex;
+        width: 50%;
+        height: 430px;
+        overflow: hidden;
+      }
+    }
 
     .effect {
-        height: 100%;
-        width: 100%;
-        position: relative;
-
-        .photos_text {
-            position: absolute;
-            color: $color-font-primary;
-            text-transform: uppercase;
-            line-height: 1.2;
-
-            :first-child {
-                font-family: 'maison_bold';
-            }
-
-            :last-child {
-                font-family: 'maison_italic';
-                padding-top: 10px;
-            }
-        }
+      height: 100%;
+      width: 100%;
+      position: relative;
+      transition: all 1.5s;
     }
 
-    .img1 {
-        background: url('../images/photo1.png') no-repeat center;
-        background-size: cover;
+    .effect:hover {
+      background-color: rgba(97, 255, 132, 0.5);
+      transform: scale(1.2);
     }
 
-    .img2 {
-        background: url('../images/photo2.png') no-repeat center;
-        background-size: cover;
+    .effect:before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: inherit;
+      content: ' ';
     }
 
-    .img3 {
-        background: url('../images/photo3.png') no-repeat center;
-        background-size: cover;
-    }
+    .photos_text {
+      position: absolute;
+      bottom: 45px;
+      left: 55px;
+      color: $color-font-primary;
+      text-transform: uppercase;
+      line-height: 1.2;
 
-    .img4 {
-        background: url('../images/photo4.png') no-repeat center;
-        background-size: cover;
-    }
+      :first-child {
+        font-family: 'maison_bold';
+        font-size: 24px;
+      }
 
-    .img5 {
-        background: url('../images/photo5.png') no-repeat center;
-        background-size: cover;
+      :last-child {
+        font-family: 'maison_italic';
+        font-size: 18px;
+        padding-top: 10px;
+      }
     }
+  }
 }
 
-.section_photos {
-    @include breakpoint(mobileonly) {
-
-        .img1,
-        .img2,
-        .img4 {
-            width: 100%;
-            height: 320px;
-            overflow: hidden;
-        }
-
-        .img3,
-        .img5 {
-            display: none;
-        }
-
-        .photos_text {
-            bottom: 30px;
-            left: 30px;
-
-            :first-child {
-                font-size: 16px;
-            }
-
-            :last-child {
-                font-size: 12px;
-            }
-        }
-    }
-}
-
-
-.section_photos {
-    @include breakpoint(tablet) {
-
-        .half {
-            width: 100%;
-            height: 860px;
-            display: flex;
-            flex-wrap: wrap;
-
-            .small {
-                width: 50%;
-                height: 430px;
-            }
-        }
-
-        .photos_text {
-            bottom: 30px;
-            left: 30px;
-
-            :first-child {
-                font-size: 20px;
-            }
-
-            :last-child {
-                font-size: 18px;
-            }
-        }
-    }
-}
-
-.section_photos {
-    @include breakpoint(desktop) {
-        display: flex;
-
-        .half {
-            width: 50%;
-            height: 860px;
-            display: flex;
-            flex-wrap: wrap;
-            overflow: hidden;
-
-            .small {
-                display: flex;
-                width: 50%;
-                height: 430px;
-                overflow: hidden;
-            }
-        }
-
-        .effect {
-            height: 100%;
-            width: 100%;
-            position: relative;
-            transition: all 1.5s;
-        }
-
-        .effect:hover {
-            background-color: rgba(97, 255, 132, 0.5);
-            transform: scale(1.2);
-        }
-
-        .effect:before {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background-color: inherit;
-            content: ' ';
-        }
-
-        .photos_text {
-            position: absolute;
-            bottom: 45px;
-            left: 55px;
-            color: $color-font-primary;
-            text-transform: uppercase;
-            line-height: 1.2;
-
-            :first-child {
-                font-family: 'maison_bold';
-                font-size: 24px;
-            }
-
-            :last-child {
-                font-family: 'maison_italic';
-                font-size: 18px;
-                padding-top: 10px;
-            }
-        }
-    }
+.section-map {
+  @include breakpoint(mobileonly) {
+    height: 310px;
+  }
+  @include breakpoint(tablet) {
+    height: 480px;
+  }
 }

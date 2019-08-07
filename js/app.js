@@ -1,5 +1,5 @@
-document.addEventListener('DOMContentLoaded', function () {
-  var swiper = new Swiper('#swiper-people', {
+document.addEventListener('DOMContentLoaded', function() {
+  var swiperPeople = new Swiper('#swiper-people', {
     slidesPerView: 1,
     loop: true,
     navigation: {
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  var swiper = new Swiper('#swiper-logos', {
+  var swiperLogos = new Swiper('#swiper-logos', {
     slidesPerView: 4,
     slidesPerColumn: 2,
     pagination: {
@@ -22,24 +22,20 @@ document.addEventListener('DOMContentLoaded', function () {
     breakpoints: {
       1024: {
         slidesPerView: 3,
-        spaceBetween: 2,
+        spaceBetween: 2
       },
       768: {
         slidesPerView: 2,
-        spaceBetween: 2,
+        spaceBetween: 2
       },
-      // 640: {
-      //   slidesPerView: 2,
-      //   spaceBetween: 20,
-      // },
       540: {
         slidesPerView: 1,
-        slidesPerColumn: 2,
+        slidesPerColumn: 2
       }
     }
   });
 
-  // var swiper = new Swiper('#swiper-poster', {
-
-  // });
+  var swiperPoster = new Swiper('#swiper-poster', {
+    slidesPerView: 'auto'
+  });
 });
