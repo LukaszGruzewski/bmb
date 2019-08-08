@@ -1,4 +1,4 @@
-.main_nav {
+.main-nav {
   position: fixed;
   width: 100%;
   font-family: 'maison_book', sans-serif;
@@ -6,54 +6,116 @@
   z-index: 100;
   box-shadow: 1.2px 1.6px 6px 0px rgba(0, 0, 0, 0.17);
 
-  .container_nav {
+  .container-nav {
     max-width: 1430px;
     margin: 0 auto;
+
     @include breakpoint(tablet) {
       padding: 0 15px;
     }
+
+    @include breakpoint(desktop) {
+      display: flex;
+
+      &>div {
+        flex: 1;
+      }
+    }
   }
 
-  .nav_logo {
+  .nav-logo {
     float: left;
     padding: 10px 0 10px 40px;
+
+    img {
+      @include breakpoint(mobileonly) {
+        width: 80px;
+        height: 40px;
+      }
+
+      @include breakpoint(tablet) {
+        width: 109px;
+        height: 51px;
+      }
+    }
   }
+
+  .menu-container {
+    @include breakpoint(mobileonly) {
+
+      .menu-icon {
+        cursor: pointer;
+        display: block;
+        float: right;
+        padding: 30px 40px;
+        user-select: none;
+
+        .navicon {
+          background: #000;
+          display: block;
+          height: 3px;
+          position: relative;
+          transition: background 0.2s ease-out;
+          width: 40px;
+
+          &:before,
+          &:after {
+            background: #000;
+            content: '';
+            display: block;
+            height: 100%;
+            position: absolute;
+            transition: all 0.2s ease-out;
+            width: 100%;
+          }
+
+          &:before {
+            top: -12px;
+          }
+
+          &:after {
+            top: 12px;
+          }
+        }
+      }
+    }
+
+    .menu-btn:checked~ {
+      .main-nav-list {
+        max-height: 100%;
+      }
+
+      .menu-icon .navicon {
+        background: transparent;
+
+        &:before {
+          transform: rotate(-45deg);
+        }
+
+        &:after {
+          transform: rotate(45deg);
+        }
+      }
+
+      .menu-icon:not(.steps) .navicon:before,
+      .menu-icon:not(.steps) .navicon:after {
+        top: 0;
+      }
+    }
+  }
+
   ul {
     list-style: none;
     background-color: #fff;
 
-    li a {
-      position: relative;
-      display: block;
-      text-decoration: none;
-      text-transform: uppercase;
-      color: #000;
-      font-size: 16px;
-      font-weight: bold;
-    }
-  }
-}
-.menu-btn {
-  display: none;
-}
-
-.main_nav {
-  @include breakpoint(mobileonly) {
-    .nav_logo {
-      float: left;
-      padding: 10px 0 10px 40px;
-      img {
-        width: 80px;
-        height: 40px;
-      }
-    }
-    ul {
+    @include breakpoint(mobileonly) {
       overflow: hidden;
       text-align: center;
 
-      & > :first-child {
+      &> :first-child {
         padding-top: 50px;
         position: relative;
+
         &:before {
           position: absolute;
           content: '';
@@ -64,91 +126,32 @@
           box-shadow: 1.2px 1.6px 6px 0px rgba(0, 0, 0, 0.17);
         }
       }
-      & > :last-child {
+
+      &> :last-child {
         padding-bottom: 50px;
       }
-      li a {
-        padding: 30px 0;
-      }
-    }
-    .main_nav_list {
-      clear: both;
-      max-height: 0;
-      transition: max-height 0.2s ease-out;
-    }
-    .menu-icon {
-      cursor: pointer;
-      display: block;
-      float: right;
-      padding: 30px 40px;
-      position: relative;
-      user-select: none;
-      text-align: center;
-
-      .navicon {
-        background: #000;
-        display: block;
-        height: 3px;
-        position: relative;
-        transition: background 0.2s ease-out;
-        width: 40px;
-
-        &:before,
-        &:after {
-          background: #000;
-          content: '';
-          display: block;
-          height: 100%;
-          position: absolute;
-          transition: all 0.2s ease-out;
-          width: 100%;
-        }
-        &:before {
-          top: -12px;
-        }
-        &:after {
-          top: 12px;
-        }
-      }
-    }
-  }
-
-  .menu-btn:checked ~ {
-    .main_nav_list {
-      max-height: 100%;
     }
 
-    .menu-icon .navicon {
-      background: transparent;
-
-      &:before {
-        transform: rotate(-45deg);
-      }
-      &:after {
-        transform: rotate(45deg);
-      }
-    }
-    .menu-icon:not(.steps) .navicon:before,
-    .menu-icon:not(.steps) .navicon:after {
-      top: 0;
-    }
-  }
-}
-
-.main_nav {
-  @include breakpoint(tablet) {
-    .nav_logo img {
-      width: 109px;
-      height: 51px;
-    }
-    .main_nav_list {
-      display: flex;
-
-      li {
+    li {
+      @include breakpoint(tablet) {
         float: left;
         padding-right: 35px;
+      }
 
-        a {
+      a {
+        position: relative;
+        display: block;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #000;
+        font-size: 16px;
+        font-weight: bold;
+
+        @include breakpoint(mobileonly) {
+          padding: 30px 0;
+        }
+
+        @include breakpoint(tablet) {
           padding: 30px 10px 0 10px;
           z-index: 5;
 
@@ -173,27 +176,28 @@
         }
       }
     }
-    .main_nav_list {
+  }
+
+  .main-nav-list {
+    @include breakpoint(mobileonly) {
+      clear: both;
+      max-height: 0;
+      transition: max-height 0.2s ease-out;
+    }
+
+    @include breakpoint(tablet) {
+      display: flex;
       clear: none;
       float: right;
       max-height: none;
     }
-    .menu-icon {
-      display: none;
-    }
-  }
-}
 
-@include breakpoint(desktop) {
-  .container_nav {
-    display: flex;
-
-    & > div {
-      flex: 1;
-    }
-
-    .main_nav_list {
+    @include breakpoint(desktop) {
       float: none;
     }
+  }
+
+  .menu-btn {
+    display: none;
   }
 }

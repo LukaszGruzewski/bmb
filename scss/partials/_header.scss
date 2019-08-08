@@ -1,67 +1,66 @@
-header {
+.page-header {
     width: 100%;
     background: url('../images/header-bg.jpg') no-repeat center;
     background-size: cover;
-}
 
-.pat {
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4) url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4D8SMQAwGcAY2AbBKDBUAVuYCBQPd34sAAAAASUVORK5CYII=");
-}
-
-.header_content {
-    h1 {
-        max-width: 630px;
-        color: #fff;
-        font-family: "maison_bold";
-        line-height: 1.2;
-    }
-
-    .p_container {
-        line-height: 1.5;
-        font-family: "maison_italic";
-        color: $color-font-secondary;
-    }
-}
-
-.header_content {
-    @include breakpoint(mobileonly) {
-        padding: 160px 10px 100px 10px;
-
-        h1 {
-            font-size: 44px;
-            color: #fff;
-            line-height: 1.2
-        }
-
-        .p_container {
-            padding: 45px 0 35px 0;
-            font-size: 20px;
-        }
-    }
-}
-
-header {
     @include breakpoint(tablet) {
         height: 100vh;
+    }
 
-        .header_content {
+    .pat {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4) url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4D8SMQAwGcAY2AbBKDBUAVuYCBQPd34sAAAAASUVORK5CYII=");
+    }
+
+    .header-content {
+        @include breakpoint(mobileonly) {
+            padding: 160px 10px 100px 10px;
+        }
+
+        @include breakpoint(tablet) {
             padding: 0 40px;
             position: relative;
             top: 300px;
+        }
 
-            h1 {
+        h1 {
+            max-width: 630px;
+            color: #fff;
+            font-family: "maison_bold";
+            line-height: 1.2;
+
+            @include breakpoint(mobileonly) {
+                font-size: 44px;
+                color: #fff;
+                line-height: 1.2
+            }
+
+            @include breakpoint(tablet) {
                 font-size: 60px;
             }
 
-            .p_container {
+        }
+
+        .p-container {
+            line-height: 1.5;
+            font-family: "maison_italic";
+            color: $color-font-secondary;
+
+            @include breakpoint(mobileonly) {
+                padding: 45px 0 35px 0;
+                font-size: 20px;
+            }
+
+            @include breakpoint(tablet) {
                 padding: 60px 0 50px 0;
                 font-size: 24px;
             }
         }
+    }
 
-        .mouse_scroll {
+    @include breakpoint(tablet) {
+        .mouse-scroll {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -93,8 +92,8 @@ header {
                 width: 16px;
                 height: 16px;
                 transform: rotate(45deg);
-                border-right: 2px solid white;
-                border-bottom: 2px solid white;
+                border-right: 2px solid #fff;
+                border-bottom: 2px solid #fff;
                 animation: scroll 2s infinite;
                 margin-top: 5px;
             }
