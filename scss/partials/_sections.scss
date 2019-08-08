@@ -418,13 +418,16 @@
     padding: 150px 0 100px 0;
   }
 
+  ul {
+    margin: 40px 0px 60px 0;
+  }
+
   .swiper-slide {
     display: flex;
     align-items: center;
 
     @include breakpoint(mobileonly) {
-      padding-top: 80px;
-      margin-bottom: 120px;
+      min-height: 150px;
     }
 
     @include breakpoint(tablet) {
