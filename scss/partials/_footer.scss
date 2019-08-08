@@ -1,113 +1,115 @@
 .page-footer {
-    padding: 50px 0 30px 0;
+  padding: 50px 0 30px 0;
 
-    .footer-text {
-        font-size: 14px;
-        line-height: 1.5;
-        color: #000;
+  .footer-text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #000;
 
-        h3 {
-            font-family: 'maison_bold';
-            padding-bottom: 5px;
-        }
-
-        p {
-            font-family: 'maison_book';
-        }
-
-        span {
-            display: inline-block;
-            font-family: 'maison_book';
-            padding: 30px 0;
-            position: relative;
-
-            &:before {
-                content: '';
-                width: 11px;
-                border-top: 1px solid $color-font-secondary;
-                position: absolute;
-                top: 15px;
-                left: 0;
-            }
-
-            &:after {
-                content: '';
-                width: 11px;
-                border-top: 1px solid $color-font-secondary;
-                position: absolute;
-                bottom: 15px;
-                left: 0;
-            }
-        }
+    h3 {
+      font-family: 'maison_bold';
+      padding-bottom: 5px;
     }
 
-    .footer-nav {
-
-        @include breakpoint(mobileonly) {
-            padding-top: 40px;
-        }
-
-        @include breakpoint(tablet) {
-            display: flex;
-            justify-content: space-between;
-            padding-top: 20px;
-        }
-
-        p {
-            @include breakpoint(mobileonly) {
-                padding: 30px 0;
-            }
-        }
-
-
-        .footer-nav-list {
-            display: flex;
-            margin-left: -2px;
-
-            li {
-                padding-right: 45px;
-
-                a {
-                    position: relative;
-                    display: block;
-                    font-family: 'maison_bold';
-                    text-decoration: none;
-                    color: #000;
-                    font-size: 14px;
-                    padding: 0 2px;
-
-                    &:before {
-                        content: '';
-                        position: absolute;
-                        z-index: -1;
-                        width: 100%;
-                        height: 8px;
-                        left: 0;
-                        bottom: -2px;
-                        background: $color-animated;
-
-                        @include breakpoint(tablet) {
-                            transform-origin: right;
-                            transform: scaleX(0);
-                            transition: transform .5s;
-                        }
-                    }
-
-                    &:hover:before {
-
-                        @include breakpoint(tablet) {
-                            transform-origin: left;
-                            transform: scaleX(1)
-                        }
-                    }
-                }
-            }
-        }
-
-        p {
-            font-size: 14px;
-            color: $color-font-copyright;
-            font-family: 'maison_book';
-        }
+    p {
+      font-family: 'maison_book';
     }
+
+    a[href^='tel'] {
+      display: inline-block;
+      font-family: 'maison_book';
+      padding: 30px 0;
+      position: relative;
+      text-decoration: none;
+      color: #000;
+
+      @include breakpoint(desktop) {
+        pointer-events: none;
+      }
+
+      &:before,
+      &:after {
+        content: '';
+        width: 11px;
+        border-top: 1px solid $color-font-secondary;
+        position: absolute;
+        left: 0;
+      }
+
+      &:before {
+        top: 15px;
+      }
+
+      &:after {
+        bottom: 15px;
+      }
+    }
+  }
+
+  .footer-nav {
+    @include breakpoint(mobileonly) {
+      padding-top: 40px;
+    }
+
+    @include breakpoint(tablet) {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 20px;
+    }
+
+    p {
+      @include breakpoint(mobileonly) {
+        padding: 30px 0;
+      }
+    }
+
+    .footer-nav-list {
+      display: flex;
+      margin-left: -2px;
+
+      li {
+        padding-right: 45px;
+
+        a {
+          position: relative;
+          display: block;
+          font-family: 'maison_bold';
+          text-decoration: none;
+          color: #000;
+          font-size: 14px;
+          padding: 0 2px;
+
+          &:before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            height: 8px;
+            left: 0;
+            bottom: -2px;
+            background: $color-animated;
+
+            @include breakpoint(tablet) {
+              transform-origin: right;
+              transform: scaleX(0);
+              transition: transform 0.5s;
+            }
+          }
+
+          &:hover:before {
+            @include breakpoint(tablet) {
+              transform-origin: left;
+              transform: scaleX(1);
+            }
+          }
+        }
+      }
+    }
+
+    p {
+      font-size: 14px;
+      color: $color-font-copyright;
+      font-family: 'maison_book';
+    }
+  }
 }

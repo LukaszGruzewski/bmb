@@ -17,7 +17,7 @@
     @include breakpoint(desktop) {
       display: flex;
 
-      &>div {
+      & > div {
         flex: 1;
       }
     }
@@ -28,13 +28,13 @@
     padding: 10px 0 10px 40px;
 
     img {
+      width: auto;
+
       @include breakpoint(mobileonly) {
-        width: 80px;
         height: 40px;
       }
 
       @include breakpoint(tablet) {
-        width: 109px;
         height: 51px;
       }
     }
@@ -42,7 +42,6 @@
 
   .menu-container {
     @include breakpoint(mobileonly) {
-
       .menu-icon {
         cursor: pointer;
         display: block;
@@ -80,7 +79,7 @@
       }
     }
 
-    .menu-btn:checked~ {
+    .menu-btn:checked ~ {
       .main-nav-list {
         max-height: 100%;
       }
@@ -112,7 +111,7 @@
       overflow: hidden;
       text-align: center;
 
-      &> :first-child {
+      & > :first-child {
         padding-top: 50px;
         position: relative;
 
@@ -127,7 +126,7 @@
         }
       }
 
-      &> :last-child {
+      & > :last-child {
         padding-bottom: 50px;
       }
     }
